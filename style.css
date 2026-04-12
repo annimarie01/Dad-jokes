@@ -8,6 +8,15 @@
   background-color: #f7e7ff;
 }
 
+.container {
+  padding: 56px 0;
+}
+.row {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .purple {
     color: #c46af4;
 }
@@ -29,11 +38,18 @@ a {
 
  */
 
-.nav {
+nav {
   display: flex;
-  justify-content: space-between;
+  height: 80px;
+}
+.nav__container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 24px;
+  display: flex;
   align-items: center;
-  padding: 20px 40px;
+  justify-content: space-between;
+  margin: 0 auto;
   background-color: #ecc9ff;
 }
 
@@ -124,3 +140,9 @@ input:focus {
     height: auto;
     background-color: #f7e7ff;
 }
+
+/*
+
+    Movie List
+    
+*/
