@@ -41,6 +41,7 @@ a {
 nav {
   display: flex;
   height: 80px;
+  background-color: #ecc9ff;
 }
 .nav__container {
   width: 100%;
@@ -50,7 +51,7 @@ nav {
   align-items: center;
   justify-content: space-between;
   margin: 0 auto;
-  background-color: #ecc9ff;
+ background-color: #ecc9ff;
 }
 
 .nav__title {
@@ -137,6 +138,7 @@ input:focus {
 
 .landing__photo {
     width: stretch;
+    max-width: 1200px;
     height: auto;
     background-color: #f7e7ff;
 }
