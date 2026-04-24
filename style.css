@@ -87,7 +87,6 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 80vh;
     text-align: center;
     gap: 20px;
     padding: 40px;
@@ -163,4 +162,13 @@ input:focus {
   display: flex;
   flex-direction: column;
   gap: 12px;
+}
+
+/* Footer */
+
+footer {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

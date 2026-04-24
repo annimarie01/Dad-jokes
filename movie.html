@@ -1,13 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
-</head>
-<body>
+  </head>
+  <body>
     <nav>
       <div class="nav__container">
         <h1 class="nav__title">
@@ -22,25 +22,41 @@
       </div>
     </nav>
     <section id="movie-info">
-        <div class="container">
-            <div class="row">
-              <div class="movie">
-                <figure class="movie__poster--wrapper">
-                    <img src="" alt="" class="movie__poster">
-                </figure>
-                <div class="movie__info">
-                    <h2 class="movie__title">Guardians of the Galaxy Vol. 2</h2>
-                    <div class="movie__rated">PG-13</div>
-                    <div class="movie__runtime">136 min</div>
-                    <div class="movie__genre">Action, Adventure, Comedy</div>
-                    <div class="movie__date">Released: 5/5/2017</div>
-                    <p class="movie__plot">
-                        The Guardians struggle to keep together as a team while dealing with their personal family issues, notably Star-Lord's encounter with his father, the ambitious celestial being Ego.
-                    </p>
-                </div>
-              </div>
+      <div class="container">
+        <div class="row">
+          <select name="movie" onchange="filterMovies(event)">
+            <option value="">Sort by</option>
+            <option value="A_TO_Z">A to Z</option>
+            <option value="Z_TO_A">Z to A</option>
+            <option value="NEW_TO_OLD">New to Old</option>
+            <option value="OLD_TO_NEW">Old to New</option>
+          </select>
+          <div class="movie">
+            <figure class="movie__poster--wrapper">
+              <img src="" alt="" class="movie__poster" />
+            </figure>
+            <div class="movie__info">
+              <h2 class="movie__title">Guardians of the Galaxy Vol. 2</h2>
+              <div class="movie__rated">PG-13</div>
+              <div class="movie__runtime">136 min</div>
+              <div class="movie__genre">Action, Adventure, Comedy</div>
+              <div class="movie__date">Released: 5/5/2017</div>
+              <p class="movie__plot">
+                The Guardians struggle to keep together as a team while dealing
+                with their personal family issues, notably Star-Lord's encounter
+                with his father, the ambitious celestial being Ego.
+              </p>
             </div>
+          </div>
         </div>
+      </div>
     </section>
-</body>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <p>&copy; 2026 Movie Now. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>

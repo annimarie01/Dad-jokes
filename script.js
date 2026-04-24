@@ -1,14 +1,24 @@
 //API Key: https://www.omdbapi.com/?i=tt3896198&apikey=cfa91572
 
-async function getMovieData() {
+async function getMovieData(filter) {
     const info = await fetch("https://www.omdbapi.com/?i=tt3896198&apikey=cfa91572");
     const movie = await info.json();
     
     const showData = document.querySelector(".movie");
     showData.innerHTML = movieHTML(movie);
+    
+    if (filter === "A_TO_Z") {
+        console.log(filter);
 }
-
-getMovieData();
+else if (filter === "Z_TO_A") {
+    console.log(filter);
+}   
+else if (filter === "NEW_TO_OLD") {
+    console.log(filter);
+}
+else if (filter === "OLD_TO_NEW") {
+    console.log(filter);
+}
 
 function movieHTML(movie) {
     return `<figure class="movie__poster--wrapper">
@@ -23,3 +33,9 @@ function movieHTML(movie) {
                     <p class="movie__plot">${movie.Plot}</p>
             </div>`
 }
+
+function filterMovies(event) {
+    getMovieData(event.target.value);
+}
+}
+getMovieData();
