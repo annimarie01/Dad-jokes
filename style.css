@@ -148,3 +148,19 @@ input:focus {
     Movie List
     
 */
+
+/* Movie Data */
+
+.movie {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.movie__info {
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
