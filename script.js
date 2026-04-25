@@ -20,7 +20,7 @@ async function getMovieData(query, filter) {
         movie.sort((a, b) => new Date(a.Released) - new Date(b.Released));
       }
 
-      document.querySelector(".movie").innerHTML = movieHTML(movies[0]);
+      document.querySelector(".movie").innerHTML = movieHTML(movie);
     } else {
       console.error(response.Error);
       document.querySelector(".movie").innerHTML = `<p>${response.Error}</p>`; // Show error if movie not found
