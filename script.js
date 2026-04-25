@@ -8,7 +8,7 @@ async function getMovieData(query, filter) {
     const response = await info.json();
 
     if (response.Response === "True") {
-      const movie = response.Search[0];// Assuming you want the first movie from the search
+      const movie = response.Search;
       
       if (filter === "A_TO_Z") {
         movie.sort((a, b) => a.Title.localeCompare(b.Title));
@@ -20,7 +20,7 @@ async function getMovieData(query, filter) {
         movie.sort((a, b) => new Date(a.Released) - new Date(b.Released));
       }
 
-      displayMovie(movie);
+      document.querySelector(".movie").innerHTML = movieHTML(movies[0]);
     } else {
       console.error(response.Error);
       document.querySelector(".movie").innerHTML = `<p>${response.Error}</p>`; // Show error if movie not found
@@ -43,8 +43,6 @@ async function getMovieData(query, filter) {
       const query = document.getElementById("search-input").value;
       await getMovieData(query);
     });
-
-getMovieData();
 
 function movieHTML(movie) {
   return `<figure class="movie__poster--wrapper">
