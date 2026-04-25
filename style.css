@@ -8,6 +8,10 @@
   background-color: #f7e7ff;
 }
 
+.movie {
+  display: none !important;
+}
+
 .container {
   padding: 56px 0;
 }
