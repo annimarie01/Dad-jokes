@@ -8,19 +8,22 @@ async function getMovieData(query, filter) {
     const response = await info.json();
 
     if (response.Response === "True") {
-      const movie = response.Search;
+      const movies = response.Search;
+      console.log(movies);
       
       if (filter === "A_TO_Z") {
-        movie.sort((a, b) => a.Title.localeCompare(b.Title));
+        movies.sort((a, b) => a.Title.localeCompare(b.Title));
       } else if (filter === "Z_TO_A") {
-        movie.sort((a, b) => b.Title.localeCompare(a.Title));
+        movies.sort((a, b) => b.Title.localeCompare(a.Title));
       } else if (filter === "NEW_TO_OLD") {
-        movie.sort((a, b) => new Date(b.Released) - new Date(a.Released));
+        movies.sort((a, b) => new Date(b.Released) - new Date(a.Released));
       } else if (filter === "OLD_TO_NEW") {
-        movie.sort((a, b) => new Date(a.Released) - new Date(b.Released));
+        movies.sort((a, b) => new Date(a.Released) - new Date(b.Released));
       }
 
-      document.querySelector(".movie").innerHTML = movieHTML(movie[0]);
+      const detailedInfo = await fetch(`https://www.omdbapi.com/?i=${movies[0].imdbID}&apikey=cfa91572`);
+      const detailedMovie = await detailedInfo.json();
+      document.querySelector(".movie").innerHTML = movieHTML(detailedMovie);
     } else {
       console.error(response.Error);
       document.querySelector(".movie").innerHTML = `<p>${response.Error}</p>`; // Show error if movie not found
