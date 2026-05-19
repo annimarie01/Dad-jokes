@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Movie Now</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
+    <script src="index.js" defer></script>
   </head>
   <body>
     <nav>
@@ -17,7 +17,7 @@
         <ul class="nav__list">
           <li><a href="index.html" class="nav__link">Home</a></li>
           <li><a href="movie.html" class="nav__link">Movies</a></li>
-          <li><a href="list.html" class="nav__link">My List</a></li>
+          <li><button class="nav__link">Contact</button></li>
         </ul>
       </div>
     </nav>
@@ -35,7 +35,6 @@
             <input type="text" id="search-input" placeholder="Search for movies..." />
             <button type="submit" class="search__btn">Search</button>
           </form>
-          <div class="movie"></div>
           <img
             class="landing__photo"
             src="./assets/filmstrip_PNG23.png"
@@ -44,6 +43,16 @@
         </div>
       </header>
     </section>
+    <div id="filter-container" class="filter-container">
+      <select id="movie-filter" name="movie">
+        <option value="">Sort by</option>
+        <option value="A_TO_Z">A to Z</option>
+        <option value="Z_TO_A">Z to A</option>
+        <option value="NEW_TO_OLD">New to Old</option>
+        <option value="OLD_TO_NEW">Old to New</option>
+      </select>
+    </div>
+    <div class="movie"></div>
     <footer>
       <div class="container">
         <div class="row">

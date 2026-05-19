@@ -107,9 +107,18 @@ nav {
     gap: 10px;
     padding: 20px 0;
 }
+.filter-container {
+    display: none;
+    justify-content: center;
+    margin: 18px 0 0;
+}
+.filter-container.visible {
+    display: flex;
+}
 input {
     padding: 10px;
-    width: 500px;
+  width: 100%;
+  max-width: 500px;
     border: 1px solid #ccc;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
@@ -122,6 +131,7 @@ input {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    margin: 20px 0;
 }
 .search__btn:hover {
     background-color: #a23bd9;
@@ -151,9 +161,55 @@ input:focus {
 /* Movie Data */
 
 .movie {
+  padding: 24px;
   display: flex;
   align-items: center;
-  justify-content: center;
+}
+
+/* When the .movie container holds multiple result cards, render as a responsive grid */
+.movie:has(.movie__card), .movie.movie--grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 18px;
+  align-items: start;
+}
+
+.movie__card {
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  color: inherit;
+}
+.movie__card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.12);
+}
+
+.movie__poster {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.movie__info h3, .movie__title {
+  font-size: 16px;
+  line-height: 1.2;
+  padding: 12px 12px 6px 12px;
+}
+.movie__year {
+  padding: 0 12px 12px 12px;
+  color: #6b6b6b;
+  font-size: 14px;
+}
+
+.movie__empty {
+  text-align: center;
+  color: #7a1e9c;
+  font-weight: 600;
   padding: 24px;
 }
 
