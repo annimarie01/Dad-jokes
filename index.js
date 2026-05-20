@@ -39,7 +39,7 @@ async function searchMovies(query) {
 }
 
 function movieCardHTML(movie) {
-  const poster = movie.Poster && movie.Poster !== "N/A" ? movie.Poster : "./assets/no-poster.png";
+  const poster = movie.Poster && movie.Poster !== "N/A" ? movie.Poster : "./assets/no-poster.svg";
   return `
     <a class="movie__card" href="movie.html?i=${movie.imdbID}">
       <figure class="movie__poster--wrapper">

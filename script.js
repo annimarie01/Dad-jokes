@@ -65,7 +65,7 @@ async function getMovieById(imdbID) {
 }
 
 function detailedMovieHTML(movie) {
-  const poster = movie.Poster && movie.Poster !== "N/A" ? movie.Poster : "./assets/no-poster.png";
+  const poster = movie.Poster && movie.Poster !== "N/A" ? movie.Poster : "./assets/no-poster.svg";
   return `
     <figure class="movie__poster--wrapper">
       <img src="${poster}" alt="${movie.Title}" class="movie__poster">
